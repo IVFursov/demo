@@ -57,6 +57,7 @@ ul li {
 	align-items: start;
 }
 .banner {
+	white-space: normal;
 	display: flex;
 	margin-left: 64px;
 	flex-direction: column;
@@ -70,6 +71,7 @@ h1 {
 	line-height: 152px;
 	letter-spacing: 0em;
 	text-align: left;
+	white-space: normal;
 }
 .text1 {
 	color: #000000;
@@ -353,13 +355,24 @@ h4 {
   content: ':';
   position: absolute;
   right: -15px;
+  color: white;
 }
 .btn {
 	display: flex;
 	justify-content: center;
 	margin: 64px auto 112px;
 }
-button {
+.copyright {
+	font: normal 400 16px/26px;
+    letter-spacing: 0.05em;
+	color: white;
+	opacity: 0.4;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+/* Модальное окно формы заказа */
+.open {
 	display: block;
 	border: none;
 	color: #000000;
@@ -380,11 +393,28 @@ button {
 button:hover {
 	background-color: #FF8C00;
 }
-.copyright {
-	font: normal 400 16px/26px;
-    letter-spacing: 0.05em;
-	color: white;
-	opacity: 0.4;
-	text-align: center;
-	margin-bottom: 30px;
+input{
+    height: 32px;
+    margin: 10px;
+    width: 300px
+}
+.order{
+    position: fixed;
+    display: none;
+    top: 24%;
+    right: 38%;
+    width: 320px;
+    background: #fff;
+    padding: -100px -100px -100px -100px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.send{
+    background: green;
+	border-radius: 5px;
+}
+.cansel{
+    background: red;
+	border-radius: 5px;
+    margin-left: 10px;
 }

@@ -36,3 +36,41 @@ document.addEventListener('DOMContentLoaded', function() {
   // вызываем функцию countdownTimer каждую секунду
   timerId = setInterval(countdownTimer, 1000);
 });
+
+//форма заказа
+$(document).ready(function (){
+    openOrder();//вызываем нашу функцию
+});
+//функция modal
+$(document).ready(function (){
+    openOrder();//вызываем нашу функцию
+});
+//функция modal
+function openOrder() {
+    //Открываем модалку при клике на кнопку Сделать заказ
+    $(".open").click(function () {
+        $(".order").show('fast');//показывает див модалки 
+    });
+    
+    //закрывает модалку при клике на кнопку Закрыть
+    $(".cansel").click(function () {
+        $(".order").hide('fast');//скрывает див модалки 
+    });
+    
+    //действия при нажатии на кнопку Отправить
+    $(".send").click(function () {
+        //Считываем данные с полей формы
+        var name = $("input#name:text").val(); 
+        var phone = $("input#phone:text").val();
+        
+        //если они не пустые
+        if(name !=="" && phone !==""){
+            var text = "Ваше имя: " +name + "\n" +"Ваш телефон: "+phone;//строка с значениями из формы
+            alert("Заказ отправлен\n"+text);//выводим информацию о успешном заказе
+            $(".order").hide('fast');//закрываем модалку
+        }else{
+            alert("Заполните поля ввода!");//если поля формы пустые, выводи сообщение
+        }
+        
+    });
+}

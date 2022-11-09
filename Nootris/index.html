@@ -8,7 +8,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	
-	<script src="js/main.js"></script>
+	 <script src="js/jquery-3.6.1.min.js"></script>
+	<script src="js/script.js"></script>
 </head>
 <body>
 	<header>
@@ -198,13 +199,24 @@
 					  </div>
 					</div>
 				<div class="btn">
-					<button>Оформить заказ!</button>
+					<button type="button" class="open">Оформить заказ!</button>
 				</div>
 			</div>
 		</div>
 		<footer>
 		<p class="copyright">Ivan Fursov studio. 2022</p>
 		</footer>
+		<!--   ----------------- Модально окно ----------------    -->    
+       
+		<div class="order">
+          <p><b>ОФОРМЛЕНИЕ ЗАКАЗА</b></p>
+           <form action="">
+               <input id="name" type="text" name="name" placeholder="Введите ваше имя*"><br>
+               <input id="phone" type="text" name="phone" placeholder="Введите ваш телефон*"><br>
+               <button type="button" class="cansel">ЗАКРЫТЬ</button>
+               <button type="button" class="send">ОТПРАВИТЬ</button>
+           </form>
+       </div>
 	</main>
 </body>
 </html>
