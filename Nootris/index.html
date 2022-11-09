@@ -7,6 +7,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
+	
+	<script src="js/main.js"></script>
 </head>
 <body>
 	<header>
@@ -50,6 +52,117 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			// Открыть модальное окно
+			function openModal() {
+			  document.getElementById("myModal").style.display = "block";
+			}
+
+			// Закрыть модальное
+			function closeModal() {
+			  document.getElementById("myModal").style.display = "none";
+			}
+
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			// Вперед/назад контроль
+			function plusSlides(n) {
+			  showSlides(slideIndex += n);
+			}
+
+			// Элементы управления миниатюрами изображений
+			function currentSlide(n) {
+			  showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("demo");
+			  var captionText = document.getElementById("caption");
+			  if (n > slides.length) {slideIndex = 1}
+			  if (n < 1) {slideIndex = slides.length}
+			  for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			  }
+			  for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";
+			  dots[slideIndex-1].className += " active";
+			  captionText.innerHTML = dots[slideIndex-1].alt;
+			}
+		</script>
+		<!-- Изображения, используемые для открытия лайтбокса -->
+		<div class="row">
+		  <div class="column">
+			<img src="img/img1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+		  </div>
+		  <div class="column">
+			<img src="img/img2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+		  </div>
+		  <div class="column">
+			<img src="img/img3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+		  </div>
+		  <div class="column">
+			<img src="img/img4.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+		  </div>
+		</div>
+
+		<!-- Модальный / Лайтбокс -->
+		<div id="myModal" class="modal">
+		  <span class="close cursor" onclick="closeModal()">&times;</span>
+		  <div class="modal-content">
+
+			<div class="mySlides">
+			  <div class="numbertext">1 / 4</div>
+			  <img src="img/img1.jpg" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+			  <div class="numbertext">2 / 4</div>
+			  <img src="img/img2.jpg" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+			  <div class="numbertext">3 / 4</div>
+			  <img src="img/img3.jpg" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+			  <div class="numbertext">4 / 4</div>
+			  <img src="img/img4.jpg" style="width:100%">
+			</div>
+
+			<!-- Вперед/назад элементы управления -->
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+			<!-- Текст подписи -->
+			<div class="caption-container">
+			  <p id="caption"></p>
+			</div>
+
+			<!-- Элементы управления миниатюрами изображений -->
+			<div class="column">
+			  <img class="demo" src="img/img1.jpg" onclick="currentSlide(1)" alt="Лимон очищает организм от токсинов">
+			</div>
+
+			<div class="column">
+			  <img class="demo" src="img/img2.jpg" onclick="currentSlide(2)" alt="От всех простуд и вирусов поможет имбирь с лимоном">
+			</div>
+
+			<div class="column">
+			  <img class="demo" src="img/img3.jpg" onclick="currentSlide(3)" alt="Помимо Nootris, нужна физическая активность.
+			  Физическая активность поможет вам не подхватить грипп">
+			</div>
+
+			<div class="column">
+			  <img class="demo" src="img/img4.jpg" onclick="currentSlide(4)" alt="Лимон полезен для кровообращения и работы сердца">
+			</div>
+		  </div>
+		</div>
 		<div class="block2">
 			<h3>ПОЛУЧИ ЗАЩИТУ ИММУНИТЕТА<br> 
 				<span class="yellow">СО СКИДКОЙ -15% ПЕРВЫМ!</span>
@@ -74,12 +187,23 @@
 							<p class="description">Нейтрализует<br> <span class="yellow">вирусы</span></p>
 						</div>
 					</div>	
+					
+					<h4><br>До конца акции осталось:</h4>
+					<div class="timer">
+					  <div class="timer__items">
+						<div class="timer__item timer__days">00</div>
+						<div class="timer__item timer__hours">00</div>
+						<div class="timer__item timer__minutes">00</div>
+						<div class="timer__item timer__seconds">00</div>
+					  </div>
+					</div>
 				<div class="btn">
 					<button>Оформить заказ!</button>
 				</div>
 			</div>
 		</div>
 		<footer>
+		<p class="copyright">Ivan Fursov studio. 2022</p>
 		</footer>
 	</main>
 </body>
